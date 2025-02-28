@@ -34,7 +34,7 @@ if (numeroTreinta === stringTreinta) {
 
  
 
-if (numeroDiez !== stringDiez) {
+if (numeroDiez == stringDiez) {
 
   console.log('Las variables numeroDiez y stringDiez tienen el mismo valor, pero tipos diferentes')
 

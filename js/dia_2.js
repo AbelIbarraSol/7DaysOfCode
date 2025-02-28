@@ -39,12 +39,51 @@ function submit__Day2() {
         cleanElements(cleanContent); // pasar botón como argumento
     }
 
+    // Ejercicio Opcional
+
+    let message_2 = document.createElement("h3");
+    message_2.textContent = `¿Te gusta estudiar ${input_Lang}?`;
+    
+
+    let btnYes = document.createElement("button");
+    btnYes.textContent = 'Si';
+
+    let btnNo = document.createElement("button");
+    btnNo.textContent = 'No';
+
+    btnYes.onclick = () => {
+        answer(contentMessage, 1);
+    }
+
+    btnNo.onclick = () => {
+        answer(contentMessage, 2);
+    }
+    
+
+
     // Insertar elemento hijo en contenedor padre
     contentMessage.appendChild(message);
     contentButtons.appendChild(cleanContent);
-
+    contentMessage.appendChild(message_2);
+    contentMessage.appendChild(btnYes);
+    contentMessage.appendChild(btnNo);
+    
     // Deshabilitar el botón "Enviar"
     btnSubmit.disabled = true;
+}
+
+function answer(content, n_answer) {
+    document.getElementById("message-content").innerHTML = "";
+    let message_3 = document.createElement("h3");
+    if (n_answer === 1) {
+        message_3.textContent = "¡Muy bien! Sigue estudiando y tendrás mucho éxito.";
+        content.appendChild(message_3);
+    }
+
+    if (n_answer === 2) {
+        message_3.textContent = "Oh, qué pena... ¿Ya intentaste aprender otros lenguajes?";
+        content.appendChild(message_3);
+    }
 }
 
 function cleanElements(cleanButton) {
@@ -54,7 +93,6 @@ function cleanElements(cleanButton) {
     document.getElementById("message-content").innerHTML = "";
     // Eliminar el botón "Limpiar" del DOM
     cleanButton.remove();
-
     // Habilitar el botón "Enviar"
     document.getElementById("btn-Submit").disabled = false;
 }
