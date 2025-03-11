@@ -5,8 +5,7 @@ function submit__Day2() {
 
     let btnSubmit = document.getElementById("btn-Submit");
     let contentButtons = document.querySelector(".day-2__button-content");
-    let contentMessageOne = document.querySelector(".day-2__message--content-one");
-    let contentMessageTwo = document.querySelector(".day-2__message--content-two");
+    let contentMessage = document.querySelector(".day-2__message--content");
 
     let message = `Hola ${input_Name}, tienes ${input_Age} años y ya estás aprendiendo ${input_Lang}!`;
 
@@ -14,98 +13,97 @@ function submit__Day2() {
         alert("Ingresa tu nombre.");
         return;
     }
-    
+
     if (input_Age === "") {
         alert("Ingresa tu edad.");
         return;
     }
-    
+
     if (input_Lang === "") {
         alert("Ingresa el lenguaje que estas estudiando.");
         return;
     }
 
-    let answer_one = document.createElement("h3");
-    answer_one.textContent = message;
-
-    // Crear elemento botón limpiar
-    let cleanContent = document.createElement("button");
-    cleanContent.textContent = "Limpiar";
-    cleanContent.classList.add("day-2__button", "day-2__button--clean");
+    let txtMessageContent = document.createElement("h3");
+    txtMessageContent.textContent = message;
+    txtMessageContent.classList.add("day-2__message--text");
 
     // Crear elemento botón pregunta
     let btnQuestion = document.createElement("button");
     btnQuestion.textContent = "Pregunta";
     btnQuestion.classList.add("day-2__button");
 
-    // btnQuestion.onclick = () => {
-      
+    btnQuestion.onclick = () => {
+        btnQuestion.style.backgroundColor = "var(--primary-color)";
+        document.querySelector(".day-2__message--text").innerHTML = `¿Te gusta estudiar ${input_Lang}?`;
 
-    //     message_2.textContent = `¿Te gusta estudiar ${input_Lang}?`;
-        
+        let btnYes = document.createElement("button");
+        btnYes.textContent = 'Si';
+        btnYes.classList.add("day-2__button","day-2__button--question-yes");
 
-    //     let btnYes = document.createElement("button");
-    //     btnYes.textContent = 'Si';
+        let btnNo = document.createElement("button");
+        btnNo.textContent = 'No';
+        btnNo.classList.add("day-2__button","day-2__button--question-no");
 
-    //     let btnNo = document.createElement("button");
-    //     btnNo.textContent = 'No';
+        contentMessage.appendChild(btnYes);
+        contentMessage.appendChild(btnNo);
 
-    //     btnYes.onclick = () => {
-    //         answer(contentMessage, 1);
-    //     }
+        btnYes.onclick = () => {
+            answer(1);
+            btnYes.remove();
+            btnNo.remove();
+            btnQuestion.remove()
+        }
 
-    //     btnNo.onclick = () => {
-    //         answer(contentMessage, 2);
-    //     }
-    // }
+        btnNo.onclick = () => {
+            answer(2);
+            btnYes.remove();
+            btnNo.remove();
+            btnQuestion.remove()
+        }
 
-    // Asignar evento on click al botón limpiar
-    
-    cleanContent.onclick = () => {
-        cleanElements(answer_one, cleanContent, btnQuestion); // pasar botón como argumento
     }
 
-    
-    
+    // Crear elemento botón limpiar
+    let cleanContent = document.createElement("button");
+    cleanContent.textContent = "Limpiar";
+    cleanContent.classList.add("day-2__button", "day-2__button--clean");
 
+    // Asignar evento on click al botón limpiar
+    cleanContent.onclick = () => {
+        cleanElements(txtMessageContent, cleanContent, btnQuestion); // pasar botón como argumento
+    }
 
     // Insertar elemento hijo en contenedor padre
-    contentMessageOne.appendChild(answer_one);
-    contentMessageOne.style.display = "block";
+    contentMessage.appendChild(txtMessageContent);
+    contentMessage.style.display = "flex";
 
     contentButtons.appendChild(cleanContent);
     contentButtons.appendChild(btnQuestion);
-    // contentMessage.appendChild(message_2);
-    // contentMessage.appendChild(btnYes);
-    // contentMessage.appendChild(btnNo);
-    
+
     // Deshabilitar el botón "Enviar"
-    btnSubmit.disabled = true;
+    btnSubmit.style.display = "none";
 }
 
-// function answer(content, n_answer) {
-//     document.getElementById("message-content").innerHTML = "";
-//     let message_3 = document.createElement("h3");
-//     if (n_answer === 1) {
-//         message_3.textContent = "¡Muy bien! Sigue estudiando y tendrás mucho éxito.";
-//         content.appendChild(message_3);
-//     }
+function answer(n_answer) {
+    if (n_answer === 1) {
+        document.querySelector(".day-2__message--text").innerHTML = "¡Muy bien! Sigue estudiando y tendrás mucho éxito.";
+    }
 
-//     if (n_answer === 2) {
-//         message_3.textContent = "Oh, qué pena... ¿Ya intentaste aprender otros lenguajes?";
-//         content.appendChild(message_3);
-//     }
-// }
+    if (n_answer === 2) {
+        document.querySelector(".day-2__message--text").innerHTML = "Oh, qué pena... ¿Ya intentaste aprender otros lenguajes?";
+    }
+}
 
-function cleanElements(answer_one,cleanButton, btnQuestion) {
+function cleanElements(txtMessageContent, cleanButton, btnQuestion) {
     document.getElementById("input-Name").value = "";
     document.getElementById("input-Age").value = "";
     document.getElementById("input-Lang").value = "";
-    document.querySelector(".day-2__message--content-one").style.display = "none";
+    document.querySelector(".day-2__message--content").style.display = "none";
     // Eliminar el botón "Limpiar" y "Pregunta" del DOM
-    answer_one.remove();
+    txtMessageContent.remove();
     cleanButton.remove();
     btnQuestion.remove();
     // Habilitar el botón "Enviar"
-    document.getElementById("btn-Submit").disabled = false;
+    document.getElementById("btn-Submit").style.display = "block";
 }

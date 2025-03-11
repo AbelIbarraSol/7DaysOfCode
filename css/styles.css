@@ -18,11 +18,12 @@ body{
     gap: 20px;
     padding: 25px 50px;
     font-size: 16px;
-    background-color: white;
+    background-color: whitesmoke;
 }
 header{
     background-color: var(--third-color);
     padding: 20px;
+    border-radius: 10px;
 }
 
 .header__title{
@@ -34,9 +35,10 @@ header{
 }
 
 .container{
+    border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: var(--second-color);
+    background-color: white;
 }
 
 .day-2{
@@ -60,6 +62,7 @@ header{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border-radius: 10px;
 }
 
 .day-2__input{
@@ -69,6 +72,7 @@ header{
     background: white;
     border: none;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .day-2__input:focus{
@@ -85,6 +89,7 @@ header{
     font-size: 1rem;
     background-color: var(--third-color);
     border: none;
+    border-radius: 5px;
 }
 
 .day-2__button-content{
@@ -94,25 +99,26 @@ header{
     flex-direction: column;
     gap: 10px;
 }
+
 .day-2__button--clean{
-    background-color: var(--primary-color);
+    background-color: var(--third-color);
 }
 
-.day-2__message--content-one{
+.day-2__message--content{
     display: none;
     grid-column: 1/3;
     grid-row: 3/4;
     margin-top: 10px;
     padding: 10px;
-    color: white;
+    background-color: var(--second-color);
+    border-radius: 5px;
+}
+
+.day-2__message--text{
+    color: var(--third-color);
     font-family: var(--font-Quicksand);
     font-weight: 500;
     font-size: 1rem;
-    background-color: var(--primary-color);
 }
 
-.day-2__message--content-two{
-    display: none;
-    grid-column: 1/3;
-    grid-row: 3/4;
-}
+
