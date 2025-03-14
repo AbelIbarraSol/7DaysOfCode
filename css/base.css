@@ -1,71 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Quicksand:wght@300..700&display=swap');
 
-:root{
+:root {
     /* COLORS */
-    
-    --primary-color:#474448;
-    --second-color:#E0DDCF;
-    --third-color:#2D232E;
+
+    --primary-color: #474448;
+    --second-color: #E0DDCF;
+    --third-color: #2D232E;
 
     /* FONTS */
     --font-FiraCode: "Fira Code", serif;
     --font-Quicksand: "Quicksand", serif;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 25px 50px;
     font-size: 16px;
-    background-color: whitesmoke;
+    background-color: #EFEFEF;
 }
-header{
+
+header {
     background-color: var(--third-color);
     padding: 20px;
     border-radius: 10px;
 }
 
-.header__title{
+.header__title {
     display: flex;
     justify-content: center;
     font-size: 2rem;
     color: white;
-    font-family: var(--font-FiraCode);    
+    font-family: var(--font-FiraCode);
 }
 
-.container{
+.container {
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
     background-color: white;
 }
 
-.day-2{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(3, auto);
-}
-
-.day__title{
-    grid-column: 1/3;
-    grid-row: 1/2;
-    font-family: var(--font-FiraCode);
-    font-weight: 500;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.day-2__input-content{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-radius: 10px;
-}
-
-.day-2__input{
+input {
     font-family: var(--font-Quicksand);
     font-weight: 500;
     font-size: 1rem;
@@ -75,13 +52,12 @@ header{
     border-radius: 5px;
 }
 
-.day-2__input:focus{
-    border: 1px solid var(--primary-color);
+input:focus {
+    border: 2px solid var(--primary-color);
     outline: none;
 }
 
-.day-2__button{
-    margin-left: 20px;
+button {
     padding: 10px;
     color: white;
     font-family: var(--font-FiraCode);
@@ -92,33 +68,28 @@ header{
     border-radius: 5px;
 }
 
-.day-2__button-content{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    display: flex;
-    flex-direction: column;
+.day-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
     gap: 10px;
 }
 
-.day-2__button--clean{
-    background-color: var(--third-color);
+.day__title {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-family: var(--font-FiraCode);
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 
-.day-2__message--content{
-    display: none;
-    grid-column: 1/3;
-    grid-row: 3/4;
-    margin-top: 10px;
+.content {
     padding: 10px;
     background-color: var(--second-color);
     border-radius: 5px;
-}
 
-.day-2__message--text{
     color: var(--third-color);
     font-family: var(--font-Quicksand);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
-
-

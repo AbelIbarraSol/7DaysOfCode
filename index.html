@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#7DaysOfCode</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/stylesSecundary.css">
     <script src="JS/dia_2.js"></script>
+    <script src="JS/dia_3.js"></script>
 </head>
 <body>
     <header>
@@ -19,17 +21,21 @@
         <section class="container day-2">
             <h2 class="day__title">Día 02</h2>
             <div class="day-2__input-content">
-                <input id="input-Name" type="text" placeholder="¿Cuál es tu nombre?" class="day-2__input ">
-                <input id="input-Age" type="text" placeholder="¿Cuántos años tienes?" class="day-2__input">
-                <input id="input-Lang" type="text" placeholder="¿Qué lenguaje de programación estás estudiando?" class="day-2__input">
+                <input id="input-Name" type="text" placeholder="¿Cuál es tu nombre?">
+                <input id="input-Age" type="text" placeholder="¿Cuántos años tienes?">
+                <input id="input-Lang" type="text" placeholder="¿Qué lenguaje de programación estás estudiando?">
             </div>
             <div class="day-2__button-content">
-                <button id="btn-Submit" onclick="submit__Day2()" class="day-2__button day-2__button--submit">Enviar</button>
+                <button id="btn-Submit" onclick="submit()">Enviar</button>
             </div>
-            <div class="day-2__message day-2__message--content"></div>
+            <div class="content day-2__message--content"></div>
         </section>
         <section class="container">
             <h2 class="day__title">Día 03</h2>
+            <div class="content">
+                <button onclick="dia3()">Comenzar</button>
+            </div>
+
         </section>
         <section class="container">
             <h2 class="day__title">Día 04</h2>

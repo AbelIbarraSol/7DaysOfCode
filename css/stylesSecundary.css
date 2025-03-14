@@ -1,0 +1,32 @@
+.day-2__input-content {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.day-2__button-content {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.day-2__button--restart {
+    background-color: var(--third-color);
+}
+
+.day-2__button--answer {
+    background-color: var(--primary-color);
+}
+
+.day-2__message--content {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
